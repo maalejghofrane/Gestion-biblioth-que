@@ -1,0 +1,29 @@
+{%  extends 'base.html.twig' %}
+{% block body %}
+    <article>
+    <table style="width:100%">
+    <thead>
+    <tr>
+        <th>nom</th>
+        <th>prenom</th>
+        <th>age</th>
+        <th>Groupe_id</th>
+        <th> NomGroupe</th>
+        <th>text</th>
+    </tr>
+    </thead>
+    {% for membre in membres %}
+
+            <tr>
+                <td>{{ membre.nom }}</td>
+                <td>{{ membre.prenom }}</td>
+                <td>{{ membre.age }}</td>
+                <td>{{ membre.groupes.id }}</td>
+                <td>{{ membre.groupes.nom }}</td>
+                <td>{{ membre.groupes.text }}</td>
+            </tr>
+
+    {% endfor %}
+    </table>
+    </article>
+{%  endblock %}

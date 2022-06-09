@@ -1,0 +1,33 @@
+{%  extends 'base.html.twig' %}
+{% block body %}
+    <article class="backMar">
+        <table style="width:100%">
+            <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Theme</th>
+                <th>Année de production </th>
+                <th>likes</th>
+                <th>dislikes</th>
+                <th>nombre de copies</th>
+            </tr>
+            </thead>
+            {% for ouvrage in ouvrages %}
+                <tbody>
+                <tr>
+                    <td>{{ ouvrage.titre }}</td>
+                    <td>{{ ouvrage.theme }} </td>
+                    <td>{{ ouvrage.anneeProd}}</td>
+                    <td>{{ ouvrage.likes  }}</td>
+                    <td>{{ ouvrage.dislikes}} </td>
+                    <td>{{ ouvrage.nbCopies}}</td>
+                    <td> <button class="buttonMar"> <a class="mar" href="/ouvrage/update/{{ ouvrage.id }} "> Modifier</a> </button></td>
+                    <td> <button class="buttonMar"> <a class="mar" href="/ouvrage/delete/{{ ouvrage.id }} "> Supprimer </a></button></td>
+                    <td> <button class= "buttonMar"> <a class="mar" href="/copie/{{ ouvrage.id }} ">Details  </a> </button></td>
+                </tr>
+                </tbody>
+            {% endfor %}
+        </table>
+
+    </article>
+{%  endblock %}

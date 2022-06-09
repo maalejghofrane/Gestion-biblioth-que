@@ -1,0 +1,18 @@
+
+{%  extends 'base.html.twig' %}
+
+
+{% block body %}
+       {{ form_start(form) }}
+    <h3>Creation d' Eleve / Classe</h3>
+    <ul class="eleves" data-prototype="{{ form_widget(form.eleves.vars.prototype)|e('html_attr') }}">
+        <button type="submit" id="BT1">Submit</button>
+         {{ form_end(form)}}
+        {%  endblock %}
+
+{% block javascripts %}
+{#    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>#}
+
+        {{ encore_entry_script_tags('app')}}
+
+{%  endblock %}

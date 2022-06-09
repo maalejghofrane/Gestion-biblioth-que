@@ -1,0 +1,36 @@
+{%  extends 'base.html.twig' %}
+{% block body %}
+    <article>
+        <table style="width:100%">
+            <thead>
+            <tr>
+                <th>Référence</th>
+                <th>Date de prêt</th>
+                <th>Date de retour</th>
+                <th>État</th>
+                <th>Ouvrage_id</th>
+                <th></th>
+                <th></th>
+                <th> Titre</th>
+                <th>Nom auteur</th>
+                <th>Thème</th>
+            </tr>
+            </thead>
+            {% for copie in copies %}
+
+                <tr>
+                    <td>{{ copie.ref }}</td>
+                    <td>{{ copie.datePret }}</td>
+                    <td>{{ copie.DateRetour }}</td>
+                    <td>{{ copie.etat }}</td>
+                    <td>{{ copie.ouvrages.id }}</td>
+                    <td> <button class="buttonMar"> <a class="mar" href="/copie/update/{{ copie.id }} "> Modifier</a> </button></td>
+                    <td> <button class="buttonMar"> <a class ="mar" href="/copie/delete/{{ copie.id }} "> Supprimer </a></button></td>
+                    <td>{{ copie.ouvrages.titre }}</td>
+                    <td>{{ copie.ouvrages.anneeProd }}</td>
+                    <td>{{ copie.ouvrages.theme }}</td>
+                </tr> 
+            {% endfor %}
+        </table>
+    </article>
+{%  endblock %}

@@ -1,0 +1,31 @@
+{%  extends 'base.html.twig' %}
+{% block body %}
+<div class="img_etu">
+    <article>
+    <table style="width:100%">
+        <thead>
+        <tr class="gris">
+            <th>cin</th>
+            <th>prenom</th>
+            <th>nom</th>
+            <th>cursus</th>
+            <th>copies</th>
+        </tr>
+        </thead>
+        {% for etudiant in etudiants %}
+                <tbody>
+                <tr class="td">
+                    <td>{{ etudiant.cin }}</td>
+                    <td>{{etudiant.prenom}}</td>
+                    <td>{{ etudiant.nom }}</td>
+                    <td>{{ etudiant.cursus}}</td>
+                    <td>{{ etudiant.copies}}</td>
+                    <td> <button class="btn btn-dark"> <a class="dark" href="/etudiant/update/{{ etudiant.id }} "> Modifier</a> </button></td>
+                    <td> <button class="btn btn-dark"> <a class="dark"href="/etudiant/delete/{{ etudiant.id }} "> Supprimer </a></button></td>
+                </tr>
+                </tbody>
+{% endfor %}
+    </table>
+    </article>
+    </div>
+{%  endblock %}

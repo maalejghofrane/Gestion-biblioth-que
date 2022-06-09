@@ -1,0 +1,8 @@
+{%  extends 'base.html.twig' %}
+{% block body  %}
+<h1> Creation d'un formulaire</h1>
+    {{ form_start(formArticle) }}
+    {{ form_widget(formArticle) }}
+    <button type="submit" class="btn btn-success">Ajouter </button>
+    {{ form_end(formArticle) }}
+{% endblock %}

@@ -1,0 +1,10 @@
+{%  extends 'base.html.twig' %}
+{% block body  %}
+<div class="img_livr">
+<h1 class="white">Ajouter un etudiant</h1>
+    {{ form_start(formEtudiant) }}
+    {{ form_widget(formEtudiant) }}
+    <button type="submit" class="btn btn-success">Ajouter </button>
+    {{ form_end(formEtudiant) }}
+    </div>
+{% endblock %}

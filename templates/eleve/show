@@ -1,0 +1,33 @@
+{%  extends 'base.html.twig' %}
+{% block body %}
+    <article>
+        <table style="width:100%">
+            <thead>
+            <tr>
+                <th>nom</th>
+                <th>sexe</th>
+                <th>id</th>
+                <th>Classe_id</th>
+{#                <th> NomClasse</th>#}
+{#                <th>NiveauClasse</th>#}
+{#                <th>SectionClasse</th>#}
+            </tr>
+            </thead>
+            {% for eleve in eleves %}
+
+                <tr>
+                    <td>{{ eleve.nom }}</td>
+                    <td>{{ eleve.sexe }}</td>
+                    <td>{{ eleve.id }}</td>
+                    <td>{{ eleve.classe.id }}</td>
+                    <td> <button> <a href="/eleve/update/{{ eleve.id }} "> Modifier</a> </button></td>
+                    <td> <button> <a href="/eleve/delete/{{ eleve.id }} "> Supprimer </a></button></td>
+{#                    <td>{{ eleve.classe.nom }}</td>#}
+{#                    <td>{{ eleve.classe.niveau }}</td>#}
+{#                    <td>{{ eleve.classe.section }}</td>#}
+                </tr>
+
+            {% endfor %}
+        </table>
+    </article>
+{%  endblock %}

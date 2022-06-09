@@ -1,0 +1,11 @@
+{%  extends 'base.html.twig' %}
+{% block body %}
+<article>
+    <h2>{{ etudiant.prenom }} {{etudiant.nom}}</h2>
+    <div class="metadata">{{ etudiant.cin }}</div>
+    <div class="content">
+        {{etudiant.cursus}}
+        {{etudiant.copies}}
+        </div>
+</article>
+{%  endblock %}

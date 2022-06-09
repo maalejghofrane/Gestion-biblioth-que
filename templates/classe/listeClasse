@@ -1,0 +1,32 @@
+{%  extends 'base.html.twig' %}
+{% block body %}
+    <article>
+        <table style="width:100%">
+            <thead>
+            <tr>
+                <th>nom</th>
+                <th>niveau</th>
+                <th>id</th>
+                <th>section</th>
+            </tr>
+            </thead>
+            {% for classe in classes %}
+                <tbody>
+                <tr>
+                    <td>{{ classe.nom }}</td>
+                    <td>{{ classe.niveau }} </td>
+                    <td>{{ classe.id }}</td>
+                    <td>  {{ classe.section  }} </td>
+
+                    <td> <button> <a href="/classe/update/{{ classe.id }} "> Modifier</a> </button></td>
+                    <td> <button> <a href="/classe/delete/{{ classe.id }} "> Supprimer </a></button></td>
+                    <td> <button>  <a href="/eleve/{{ classe.id }} ">Details  </a> </button></td>
+
+                </tr>
+
+                </tbody>
+            {% endfor %}
+        </table>
+
+    </article>
+{%  endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Exemple{% endblock %}
+
+{% block body %}
+    <h1>Exemple</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ exemple.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ exemple.nom }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('exemple_index') }}">back to list</a>
+
+    <a href="{{ path('exemple_edit', {'id': exemple.id}) }}">edit</a>
+
+    {{ include('exemple/_delete_form.html.twig') }}
+{% endblock %}

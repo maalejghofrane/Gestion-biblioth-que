@@ -1,0 +1,27 @@
+{%  extends 'base.html.twig' %}
+{% block body %}
+    <article>
+    <table style="width:100%">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Date</th>
+            <th>id</th>
+            <th>content</th>
+        </tr>
+        </thead>
+        {% for article in articles %}
+                <tbody>
+                <tr>
+                    <td>{{ article.title }}</td>
+                    <td>Ecrit le  {{ article.createdAt | date('d/m/Y') }} à{{ article.createdAt | date('H:i')}}dans la categorie politique</td>
+                    <td>{{ article.id }}</td>
+                    <td>  {{ article.content | raw  }} </td>
+                </tr>
+
+                </tbody>
+{% endfor %}
+    </table>
+
+    </article>
+{%  endblock %}
